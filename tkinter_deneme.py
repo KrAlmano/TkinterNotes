@@ -1,58 +1,64 @@
-import tkinter as tk 
+import tkinter as tk
 import random as rd
 
 form = tk.Tk()
-form.geometry('500x500+350+75')
-form.title('Deneme')
-
+form.title('Deneme Uygulaması')
+form.geometry('500x400+250+75')
 liste = []
 
 for i in range(5):
-    while len(liste) != 6:
+    while len(liste)!=5:
         a = rd.randint(0,50)
         if a not in liste:
             liste.append(a)
 
+
+
 def göster():
-    label.config(text=liste, bg='green')
+    label.config(text=liste,bg='blue')
+
 
 def saydamlaştır():
     form.wm_attributes('-alpha',0.3)
 
 
-def döndür():
+def düzelt():
     form.wm_attributes('-alpha',0.9)
 
-def MaxYap():
+def ekranBüyüt():
     form.state('zoomed')
 
-def MinYap():
+def ekranKüçült():
     form.state('iconic')
 
 
-label = tk.Label(form,fg='red',bg='yellow')
+
+
+
+label = tk.Label(form,fg='green',bg='white')
 label.pack()
 
-
-göster= tk.Button(form,text='göster',fg='black',bg='white',command=göster)
-göster.pack(side=tk.LEFT)
-
-
-saydamlaştır= tk.Button(form,text='Saydamlaştır',fg='black',bg='white',command=saydamlaştır)
-saydamlaştır.pack(side=tk.LEFT)
+göster = tk.Button(form,text='Göster',fg='red',bg='white',command=göster)
+göster.pack()
 
 
-döndür= tk.Button(form,text='Döndür',fg='black',bg='white',command=döndür)
-döndür.pack(side=tk.LEFT)
+saydamlaştır = tk.Button(form,text='Saydamlaştır',fg='red',bg='white',command=saydamlaştır)
+saydamlaştır.pack()
 
 
-MaxYap= tk.Button(form,text='Maxyap',fg='black',bg='white',command=MaxYap)
-MaxYap.pack(side=tk.RIGHT)
+
+düzelt = tk.Button(form,text='Düzelt',fg='red',bg='white',command=düzelt)
+düzelt.pack()
 
 
-MinYap= tk.Button(form,text='Minyap',fg='black',bg='white',command=MinYap)
-MinYap.pack(side=tk.RIGHT)
 
+ekranBüyüt = tk.Button(form,text='EkranBüyüt',fg='red',bg='white',command=ekranBüyüt)
+ekranBüyüt.pack()
+
+
+
+ekranKüçült = tk.Button(form,text='EkranKüçült',fg='red',bg='white',command=ekranKüçült)
+ekranKüçült.pack()
 
 
 
